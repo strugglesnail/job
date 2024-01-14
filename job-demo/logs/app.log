@@ -1,0 +1,619 @@
+2023-12-17 10:34:20.349  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 10:34:20.474  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 10:34:20.477  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 10:34:20.492  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 10:34:20.492  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 10:34:20.494  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 10:34:20.495  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 10:34:20.495  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 10:34:20.495  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 10:34:23.754 ERROR [main] c.f.j.c.u.JobRemotingUtil                : Read timed out
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345) ~[?:1.8.0_151]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:735) ~[?:1.8.0_151]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:678) ~[?:1.8.0_151]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587) ~[?:1.8.0_151]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492) ~[?:1.8.0_151]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480) ~[?:1.8.0_151]
+	at com.frontier.job.core.util.JobRemotingUtil.postBody(JobRemotingUtil.java:119) [job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.client.HttpAdminClient.registry(HttpAdminClient.java:22) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.AbstractExecutor.initServer(AbstractExecutor.java:85) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.AbstractExecutor.start(AbstractExecutor.java:65) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.SimpleExecutor.start(SimpleExecutor.java:17) [job-core-1.0.jar:?]
+	at com.frontier.demo.config.JobConfig.initJobExecutor(JobConfig.java:52) [classes/:?]
+	at com.frontier.demo.DemoApplication.main(DemoApplication.java:18) [classes/:?]
+2023-12-17 10:34:23.789  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 10:34:25.847  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 10:40:21.706  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 10:40:21.751  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 10:40:21.755  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 10:40:21.770  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 10:40:21.770  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 10:40:21.771  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 10:40:21.773  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 10:40:21.773  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 10:40:21.773  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 10:40:24.864 ERROR [main] c.f.j.c.u.JobRemotingUtil                : Read timed out
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345) ~[?:1.8.0_151]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:735) ~[?:1.8.0_151]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:678) ~[?:1.8.0_151]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587) ~[?:1.8.0_151]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492) ~[?:1.8.0_151]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480) ~[?:1.8.0_151]
+	at com.frontier.job.core.util.JobRemotingUtil.postBody(JobRemotingUtil.java:119) [job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.client.HttpAdminClient.registry(HttpAdminClient.java:22) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.AbstractExecutor.initServer(AbstractExecutor.java:85) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.AbstractExecutor.start(AbstractExecutor.java:65) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.SimpleExecutor.start(SimpleExecutor.java:17) [job-core-1.0.jar:?]
+	at com.frontier.demo.config.JobConfig.initJobExecutor(JobConfig.java:52) [classes/:?]
+	at com.frontier.demo.DemoApplication.main(DemoApplication.java:18) [classes/:?]
+2023-12-17 10:40:24.879  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 10:40:26.600  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 10:49:04.005  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 10:49:04.053  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 10:49:04.057  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 10:49:04.072  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 10:49:04.073  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 10:49:04.074  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 10:49:04.075  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 10:49:04.075  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 10:49:04.075  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 10:49:07.158 ERROR [main] c.f.j.c.u.JobRemotingUtil                : Read timed out
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_151]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286) ~[?:1.8.0_151]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345) ~[?:1.8.0_151]
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:735) ~[?:1.8.0_151]
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:678) ~[?:1.8.0_151]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587) ~[?:1.8.0_151]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492) ~[?:1.8.0_151]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480) ~[?:1.8.0_151]
+	at com.frontier.job.core.util.JobRemotingUtil.postBody(JobRemotingUtil.java:119) [job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.client.HttpAdminClient.registry(HttpAdminClient.java:22) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.AbstractExecutor.initServer(AbstractExecutor.java:85) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.AbstractExecutor.start(AbstractExecutor.java:65) [job-core-1.0.jar:?]
+	at com.frontier.job.core.executor.SimpleExecutor.start(SimpleExecutor.java:17) [job-core-1.0.jar:?]
+	at com.frontier.demo.config.JobConfig.initJobExecutor(JobConfig.java:52) [classes/:?]
+	at com.frontier.demo.DemoApplication.main(DemoApplication.java:18) [classes/:?]
+2023-12-17 10:49:07.168  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 10:49:08.812  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 10:53:10.292  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 10:53:10.347  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 10:53:10.350  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 10:53:10.367  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 10:53:10.368  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 10:53:10.369  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 10:53:10.370  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 10:53:10.371  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 10:53:10.371  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 10:53:10.690  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 10:53:10.693  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 10:53:12.072  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 11:48:48.425  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 11:48:48.470  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 11:48:48.473  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 11:48:48.487  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 11:48:48.487  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 11:48:48.488  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 11:48:48.489  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 11:48:48.489  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 11:48:48.490  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 11:48:48.718  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 11:48:48.720  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 11:48:50.111  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 11:52:13.562  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 11:52:13.617  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 11:52:13.621  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 11:52:13.638  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 11:52:13.638  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 11:52:13.640  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 11:52:13.641  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 11:52:13.641  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 11:52:13.641  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 11:52:13.898  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 11:52:13.900  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 11:52:15.462  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 11:56:53.570  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 11:56:53.616  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 11:56:53.619  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 11:56:53.635  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 11:56:53.635  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 11:56:53.636  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 11:56:53.637  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 11:56:53.637  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 11:56:53.638  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 11:56:53.845  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 11:56:53.847  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 11:56:55.223  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 11:59:27.175  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 11:59:27.229  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 11:59:27.233  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 11:59:27.249  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 11:59:27.249  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 11:59:27.250  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 11:59:27.251  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 11:59:27.251  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 11:59:27.251  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 11:59:27.474  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 11:59:27.476  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 11:59:28.893  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 12:00:12.133  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 12:00:12.182  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 12:00:12.186  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 12:00:12.203  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 12:00:12.203  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 12:00:12.204  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 12:00:12.205  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 12:00:12.205  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 12:00:12.205  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 12:00:12.294  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 12:00:12.296  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 12:00:13.695  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 12:14:28.191  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 12:14:28.239  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 12:14:28.243  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 12:14:28.259  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 12:14:28.259  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 12:14:28.260  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 12:14:28.261  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 12:14:28.262  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 12:14:28.262  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 12:14:28.508  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 12:14:28.510  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 12:14:30.146  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 12:53:21.181  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 12:53:21.234  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 12:53:21.237  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 12:53:21.252  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 12:53:21.252  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 12:53:21.253  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 12:53:21.253  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 12:53:21.254  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 12:53:21.254  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 12:53:21.576  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 12:53:22.955  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 12:54:10.383  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 12:54:10.433  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 12:54:10.436  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 12:54:10.449  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 12:54:10.449  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 12:54:10.450  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 12:54:10.451  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 12:54:10.451  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 12:54:10.451  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 12:54:10.693  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 12:54:10.696  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 12:54:12.096  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 12:58:42.498  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 12:58:42.551  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 12:58:42.555  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 12:58:42.573  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 12:58:42.574  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 12:58:42.575  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 12:58:42.577  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 12:58:42.577  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 12:58:42.577  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 12:58:42.835  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 12:58:42.837  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 12:58:44.180  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 12:59:16.428 ERROR [job, EmbedServer bizThreadPool-425729155] j.c.s.EmbedServer$EmbedHttpServerHandler : com.frontier.job.core.exception.TaskException: The task misfire policy '*/5 * * * * ? ' cannot be used in cron schedule tasks
+java.lang.RuntimeException: com.frontier.job.core.exception.TaskException: The task misfire policy '*/5 * * * * ? ' cannot be used in cron schedule tasks
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:87) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:59) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: com.frontier.job.core.exception.TaskException: The task misfire policy '*/5 * * * * ? ' cannot be used in cron schedule tasks
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.handleCronScheduleMisfirePolicy(JobScheduler.java:106) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:44) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:83) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:04:37.845 ERROR [job, EmbedServer bizThreadPool-425729155] j.c.s.EmbedServer$EmbedHttpServerHandler : com.frontier.job.core.exception.TaskException: The task misfire policy '*/5 * * * * ? ' cannot be used in cron schedule tasks
+java.lang.RuntimeException: com.frontier.job.core.exception.TaskException: The task misfire policy '*/5 * * * * ? ' cannot be used in cron schedule tasks
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:87) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:59) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: com.frontier.job.core.exception.TaskException: The task misfire policy '*/5 * * * * ? ' cannot be used in cron schedule tasks
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.handleCronScheduleMisfirePolicy(JobScheduler.java:106) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:44) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:83) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:04:43.439  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:04:43.496  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:04:43.499  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:04:43.515  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:04:43.516  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:04:43.517  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:04:43.518  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:04:43.519  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:04:43.519  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:04:43.777  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:04:43.779  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:04:45.180  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:05:02.124 ERROR [job, EmbedServer bizThreadPool-1092028578] j.c.s.EmbedServer$EmbedHttpServerHandler : java.lang.NullPointerException
+java.lang.RuntimeException: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:88) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:60) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:69) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:84) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:06:58.855  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:06:58.902  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:06:58.907  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:06:58.927  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:06:58.927  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:06:58.929  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:06:58.930  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:06:58.930  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:06:58.931  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:06:59.019  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:06:59.021  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:07:00.378  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:08:07.091 ERROR [job, EmbedServer bizThreadPool-425729155] j.c.s.EmbedServer$EmbedHttpServerHandler : java.lang.NullPointerException
+java.lang.RuntimeException: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:88) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:60) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:69) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:84) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:08:38.224  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:08:38.276  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:08:38.279  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:08:38.293  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:08:38.293  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:08:38.294  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:08:38.296  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:08:38.296  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:08:38.296  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:08:38.390  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:08:38.392  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:08:39.791  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:09:53.431 ERROR [job, EmbedServer bizThreadPool-721492287] j.c.s.EmbedServer$EmbedHttpServerHandler : java.lang.NullPointerException
+java.lang.RuntimeException: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:88) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:60) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:69) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:84) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:10:20.567  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:10:20.621  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:10:20.625  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:10:20.641  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:10:20.641  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:10:20.642  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:10:20.643  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:10:20.643  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:10:20.644  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:10:20.741  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:10:20.743  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:10:22.159  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:10:33.583 ERROR [job, EmbedServer bizThreadPool-1378556289] j.c.s.EmbedServer$EmbedHttpServerHandler : java.lang.NullPointerException
+java.lang.RuntimeException: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:88) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:60) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:69) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:84) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:11:40.939  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:11:40.986  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:11:40.990  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:11:41.008  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:11:41.008  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:11:41.009  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:11:41.010  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:11:41.010  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:11:41.011  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:11:41.105  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:11:41.108  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:11:42.518  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:12:35.829 ERROR [job, EmbedServer bizThreadPool-1791781859] j.c.s.EmbedServer$EmbedHttpServerHandler : java.lang.NullPointerException
+java.lang.RuntimeException: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:88) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:60) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:69) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:84) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:12:38.275  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:12:38.321  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:12:38.325  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:12:38.340  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:12:38.340  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:12:38.341  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:12:38.342  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:12:38.343  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:12:38.343  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:12:38.438  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:12:38.440  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:12:39.828  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:13:23.244 ERROR [job, EmbedServer bizThreadPool-1429742817] j.c.s.EmbedServer$EmbedHttpServerHandler : java.lang.NullPointerException
+java.lang.RuntimeException: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:88) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.duplex.server.ExecutorServer.run(ExecutorServer.java:60) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.process(EmbedServer.java:184) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.server.EmbedServer$EmbedHttpServerHandler.lambda$channelRead0$0(EmbedServer.java:150) ~[job-core-1.0.jar:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+Caused by: java.lang.NullPointerException
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.createScheduleJob(JobScheduler.java:69) ~[job-core-1.0.jar:?]
+	at com.frontier.job.core.quartz.scheduler.JobScheduler.triggerJob(JobScheduler.java:84) ~[job-core-1.0.jar:?]
+	... 6 more
+2023-12-17 13:14:26.971  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:14:27.026  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:14:27.031  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:14:27.047  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:14:27.047  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:14:27.048  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:14:27.049  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:14:27.050  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:14:27.050  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:14:27.311  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:14:28.728  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:14:45.299  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:14:45.350  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:14:45.353  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:14:45.368  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:14:45.369  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:14:45.369  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:14:45.370  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:14:45.370  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:14:45.371  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:14:45.454  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:14:46.925  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:15:06.048  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:15:06.103  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:15:06.106  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:15:06.124  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:15:06.124  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:15:06.126  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:15:06.127  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:15:06.127  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:15:06.128  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:15:06.369  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:15:06.371  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:15:07.756  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:17:23.411  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:17:23.463  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:17:23.466  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:17:23.481  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:17:23.481  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:17:23.482  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:17:23.483  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:17:23.483  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:17:23.483  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:17:23.721  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:17:23.723  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:17:25.089  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998
+2023-12-17 13:20:04.889  INFO [main] c.f.j.c.e.AbstractExecutor               : job register jobHandler success, name:demoJobHandler, jobHandler:com.frontier.job.core.handler.MethodJobHandler@4d0d9fe7
+2023-12-17 13:20:04.938  INFO [main] o.q.i.StdSchedulerFactory                : Using default implementation for ThreadExecutor
+2023-12-17 13:20:04.941  INFO [main] o.q.s.SimpleThreadPool                   : Job execution threads will use class loader of thread: main
+2023-12-17 13:20:04.957  INFO [main] o.q.c.SchedulerSignalerImpl              : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2023-12-17 13:20:04.957  INFO [main] o.q.c.QuartzScheduler                    : Quartz Scheduler v.2.3.2 created.
+2023-12-17 13:20:04.959  INFO [main] o.q.s.RAMJobStore                        : RAMJobStore initialized.
+2023-12-17 13:20:04.960  INFO [main] o.q.c.QuartzScheduler                    : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2023-12-17 13:20:04.960  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2023-12-17 13:20:04.960  INFO [main] o.q.i.StdSchedulerFactory                : Quartz scheduler version: 2.3.2
+2023-12-17 13:20:05.208  INFO [main] c.f.j.c.e.AbstractExecutor               : job-executor-sample: 注册成功！
+2023-12-17 13:20:05.210  WARN [main] c.f.j.c.e.AbstractExecutor               : job accessToken is empty. To ensure system security, please set the accessToken.
+2023-12-17 13:20:06.546  INFO [Thread-1] c.f.j.c.s.EmbedServer                    : job remoting server start success, nettype = class com.frontier.job.core.server.EmbedServer, port = 9998

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frontier.job.admin.mapper.JobInfoMapper">
+  <resultMap id="BaseResultMap" type="com.frontier.job.admin.model.JobInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="job_server_id" jdbcType="INTEGER" property="jobServerId" />
+    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
+    <result column="job_group" jdbcType="VARCHAR" property="jobGroup" />
+    <result column="executor_handler" jdbcType="VARCHAR" property="executorHandler" />
+    <result column="executor_param" jdbcType="VARCHAR" property="executorParam" />
+    <result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+    <result column="misfire_policy" jdbcType="VARCHAR" property="misfirePolicy" />
+    <result column="concurrent" jdbcType="CHAR" property="concurrent" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="job_infoColumns">
+        id, <!-- 任务ID -->
+        job_server_id, <!-- 服务主键ID -->
+        job_name, <!-- 任务名称 -->
+        job_group, <!-- 任务组名 -->
+        executor_handler, <!-- 执行器任务handler -->
+        executor_param, <!-- 执行器任务参数 -->
+        cron_expression, <!-- cron执行表达式 -->
+        misfire_policy, <!-- 计划执行错误策略（1立即执行 2执行一次 3放弃执行） -->
+        concurrent, <!-- 是否并发执行（0允许 1禁止） -->
+        status, <!-- 状态（0暂停 1正常） -->
+        create_by, <!-- 创建者 -->
+        create_time, <!-- 创建时间 -->
+        update_by, <!-- 更新者 -->
+        update_time, <!-- 更新时间 -->
+        remark <!-- 备注信息 -->
+  </sql>
+  <sql id="job_infoDynamicWhere">
+    <where>
+      <if test="null != id and '' !=  id">AND id = #{ id}</if>
+      <if test="null != jobServerId and '' !=  jobServerId">AND job_server_id = #{ jobServerId}</if>
+      <if test="null != jobName and '' !=  jobName">AND job_name = #{ jobName}</if>
+      <if test="null != jobGroup and '' !=  jobGroup">AND job_group = #{ jobGroup}</if>
+      <if test="null != executorHandler and '' !=  executorHandler">AND executor_handler = #{ executorHandler}</if>
+      <if test="null != executorParam and '' !=  executorParam">AND executor_param = #{ executorParam}</if>
+      <if test="null != cronExpression and '' !=  cronExpression">AND cron_expression = #{ cronExpression}</if>
+      <if test="null != misfirePolicy and '' !=  misfirePolicy">AND misfire_policy = #{ misfirePolicy}</if>
+      <if test="null != concurrent and '' !=  concurrent">AND concurrent = #{ concurrent}</if>
+      <if test="null != status and '' !=  status">AND status = #{ status}</if>
+      <if test="null != createBy and '' !=  createBy">AND create_by = #{ createBy}</if>
+      <if test="null != createTime and '' !=  createTime">AND create_time = #{ createTime}</if>
+      <if test="null != updateBy and '' !=  updateBy">AND update_by = #{ updateBy}</if>
+      <if test="null != updateTime and '' !=  updateTime">AND update_time = #{ updateTime}</if>
+      <if test="null != remark and '' !=  remark">AND remark = #{ remark}</if>
+	</where>
+  </sql>
+  <sql id="job_infoDynamicLikeWhere">
+    <where>
+      <if test="null != id and '' !=  id">AND id LIKE #{ id}</if>
+      <if test="null != jobServerId and '' !=  jobServerId">AND job_server_id LIKE #{ jobServerId}</if>
+      <if test="null != jobName and '' !=  jobName">AND job_name LIKE #{ jobName}</if>
+      <if test="null != jobGroup and '' !=  jobGroup">AND job_group LIKE #{ jobGroup}</if>
+      <if test="null != executorHandler and '' !=  executorHandler">AND executor_handler LIKE #{ executorHandler}</if>
+      <if test="null != executorParam and '' !=  executorParam">AND executor_param LIKE #{ executorParam}</if>
+      <if test="null != cronExpression and '' !=  cronExpression">AND cron_expression LIKE #{ cronExpression}</if>
+      <if test="null != misfirePolicy and '' !=  misfirePolicy">AND misfire_policy LIKE #{ misfirePolicy}</if>
+      <if test="null != concurrent and '' !=  concurrent">AND concurrent LIKE #{ concurrent}</if>
+      <if test="null != status and '' !=  status">AND status LIKE #{ status}</if>
+      <if test="null != createBy and '' !=  createBy">AND create_by LIKE #{ createBy}</if>
+      <if test="null != createTime and '' !=  createTime">AND create_time LIKE #{ createTime}</if>
+      <if test="null != updateBy and '' !=  updateBy">AND update_by LIKE #{ updateBy}</if>
+      <if test="null != updateTime and '' !=  updateTime">AND update_time LIKE #{ updateTime}</if>
+      <if test="null != remark and '' !=  remark">AND remark LIKE #{ remark}</if>
+	</where>
+  </sql>
+  <select id="listPage" parameterType="com.frontier.job.admin.model.JobInfo" resultMap="BaseResultMap">
+    SELECT <include refid="job_infoColumns" /> FROM  `job_info` <include refid="job_infoDynamicWhere" />
+  </select>
+  <select id="listLikePage" parameterType="com.frontier.job.admin.model.JobInfo" resultMap="BaseResultMap">
+    SELECT <include refid="job_infoColumns" /> FROM  `job_info` <include refid="job_infoDynamicLikeWhere" />
+  </select>
+  <select id="list" parameterType="com.frontier.job.admin.model.JobInfo" resultMap="BaseResultMap">
+    SELECT <include refid="job_infoColumns" /> FROM  `job_info` <include refid="job_infoDynamicWhere" />
+  </select>
+  <select id="getById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    SELECT <include refid="job_infoColumns" /> FROM  `job_info` WHERE id = #{id}
+  </select>
+  <select id="getOne" parameterType="com.frontier.job.admin.model.JobInfo" resultMap="BaseResultMap">
+    SELECT <include refid="job_infoColumns" /> FROM  `job_info` <include refid="job_infoDynamicWhere" /> LIMIT 1
+  </select>
+  <select id="count" parameterType="com.frontier.job.admin.model.JobInfo" resultType="java.lang.Long">
+    SELECT COUNT(1) FROM `job_info` <include refid="job_infoDynamicWhere" />
+  </select>
+  <select id="countLike" parameterType="com.frontier.job.admin.model.JobInfo" resultType="java.lang.Long">
+    SELECT COUNT(1) FROM `job_info` <include refid="job_infoDynamicLikeWhere" />
+  </select>
+  <sql id="save_job_info_columns">
+    INSERT INTO `job_info`(
+		job_server_id, job_name, job_group, executor_handler, executor_param, cron_expression, misfire_policy, concurrent, status, create_by, create_time, update_by, update_time, remark
+	) VALUES
+  </sql>
+  <sql id="save_job_info_values">
+    (
+	  #{ jobServerId, jdbcType=INTEGER},
+	  #{ jobName, jdbcType=VARCHAR},
+	  #{ jobGroup, jdbcType=VARCHAR},
+	  #{ executorHandler, jdbcType=VARCHAR},
+	  #{ executorParam, jdbcType=VARCHAR},
+	  #{ cronExpression, jdbcType=VARCHAR},
+	  #{ misfirePolicy, jdbcType=VARCHAR},
+	  #{ concurrent, jdbcType=CHAR},
+	  #{ status, jdbcType=CHAR},
+	  #{ createBy, jdbcType=VARCHAR},
+	  #{ createTime, jdbcType=TIMESTAMP},
+	  #{ updateBy, jdbcType=VARCHAR},
+	  #{ updateTime, jdbcType=TIMESTAMP},
+	  #{ remark, jdbcType=VARCHAR}
+	)
+  </sql>
+  <sql id="batch_save_job_info_values">
+    (
+	  #{ item.jobServerId, jdbcType=INTEGER},
+	  #{ item.jobName, jdbcType=VARCHAR},
+	  #{ item.jobGroup, jdbcType=VARCHAR},
+	  #{ item.executorHandler, jdbcType=VARCHAR},
+	  #{ item.executorParam, jdbcType=VARCHAR},
+	  #{ item.cronExpression, jdbcType=VARCHAR},
+	  #{ item.misfirePolicy, jdbcType=VARCHAR},
+	  #{ item.concurrent, jdbcType=CHAR},
+	  #{ item.status, jdbcType=CHAR},
+	  #{ item.createBy, jdbcType=VARCHAR},
+	  #{ item.createTime, jdbcType=TIMESTAMP},
+	  #{ item.updateBy, jdbcType=VARCHAR},
+	  #{ item.updateTime, jdbcType=TIMESTAMP},
+	  #{ item.remark, jdbcType=VARCHAR}
+	)
+  </sql>
+  <insert id="save" keyProperty="id" parameterType="com.frontier.job.admin.model.JobInfo" useGeneratedKeys="true">
+    <include refid="save_job_info_columns" /><include refid="save_job_info_values" />
+  </insert>
+  <insert id="saveBatch" keyProperty="id" parameterType="list" useGeneratedKeys="true">
+    <include refid="save_job_info_columns"/>
+	<foreach collection="list" index="index" item="item" separator=",">
+		<include refid="batch_save_job_info_values"/>
+	</foreach>
+  </insert>
+  <sql id="job_infoUpdate">
+    UPDATE `job_info` 
+	<set> 
+      <if test="null != jobServerId">job_server_id = #{ jobServerId, jdbcType=INTEGER },</if>
+      <if test="null != jobName">job_name = #{ jobName, jdbcType=VARCHAR },</if>
+      <if test="null != jobGroup">job_group = #{ jobGroup, jdbcType=VARCHAR },</if>
+      <if test="null != executorHandler">executor_handler = #{ executorHandler, jdbcType=VARCHAR },</if>
+      <if test="null != executorParam">executor_param = #{ executorParam, jdbcType=VARCHAR },</if>
+      <if test="null != cronExpression">cron_expression = #{ cronExpression, jdbcType=VARCHAR },</if>
+      <if test="null != misfirePolicy">misfire_policy = #{ misfirePolicy, jdbcType=VARCHAR },</if>
+      <if test="null != concurrent">concurrent = #{ concurrent, jdbcType=CHAR },</if>
+      <if test="null != status">status = #{ status, jdbcType=CHAR },</if>
+      <if test="null != createBy">create_by = #{ createBy, jdbcType=VARCHAR },</if>
+      <if test="null != createTime">create_time = #{ createTime, jdbcType=TIMESTAMP },</if>
+      <if test="null != updateBy">update_by = #{ updateBy, jdbcType=VARCHAR },</if>
+      <if test="null != updateTime">update_time = #{ updateTime, jdbcType=TIMESTAMP },</if>
+      <if test="null != remark">remark = #{ remark, jdbcType=VARCHAR }</if>
+	</set>
+	WHERE job_server_id = #{jobServerId} and job_group = #{jobGroup} and executor_handler = #{executorHandler}
+  </sql>
+  <sql id="job_infoUpdateBatch">
+    UPDATE `job_info` 
+	<set> 
+      <if test="null != item.jobServerId">job_server_id = #{ item.jobServerId, jdbcType=INTEGER },</if>
+      <if test="null != item.jobName">job_name = #{ item.jobName, jdbcType=VARCHAR },</if>
+      <if test="null != item.jobGroup">job_group = #{ item.jobGroup, jdbcType=VARCHAR },</if>
+      <if test="null != item.executorHandler">executor_handler = #{ item.executorHandler, jdbcType=VARCHAR },</if>
+      <if test="null != item.executorParam">executor_param = #{ item.executorParam, jdbcType=VARCHAR },</if>
+      <if test="null != item.cronExpression">cron_expression = #{ item.cronExpression, jdbcType=VARCHAR },</if>
+      <if test="null != item.misfirePolicy">misfire_policy = #{ item.misfirePolicy, jdbcType=VARCHAR },</if>
+      <if test="null != item.concurrent">concurrent = #{ item.concurrent, jdbcType=CHAR },</if>
+      <if test="null != item.status">status = #{ item.status, jdbcType=CHAR },</if>
+      <if test="null != item.createBy">create_by = #{ item.createBy, jdbcType=VARCHAR },</if>
+      <if test="null != item.createTime">create_time = #{ item.createTime, jdbcType=TIMESTAMP },</if>
+      <if test="null != item.updateBy">update_by = #{ item.updateBy, jdbcType=VARCHAR },</if>
+      <if test="null != item.updateTime">update_time = #{ item.updateTime, jdbcType=TIMESTAMP },</if>
+      <if test="null != item.remark">remark = #{ item.remark, jdbcType=VARCHAR }</if>
+	</set>
+	WHERE id = #{ item.id }
+  </sql>
+  <update id="update" parameterType="com.frontier.job.admin.model.JobInfo">
+    <include refid="job_infoUpdate" />
+  </update>
+
+    <update id="updateById">
+        UPDATE `job_info`
+        <set>
+            <if test="null != jobServerId">job_server_id = #{ jobServerId, jdbcType=INTEGER },</if>
+            <if test="null != jobName">job_name = #{ jobName, jdbcType=VARCHAR },</if>
+            <if test="null != jobGroup">job_group = #{ jobGroup, jdbcType=VARCHAR },</if>
+            <if test="null != executorHandler">executor_handler = #{ executorHandler, jdbcType=VARCHAR },</if>
+            <if test="null != executorParam">executor_param = #{ executorParam, jdbcType=VARCHAR },</if>
+            <if test="null != cronExpression">cron_expression = #{ cronExpression, jdbcType=VARCHAR },</if>
+            <if test="null != misfirePolicy">misfire_policy = #{ misfirePolicy, jdbcType=VARCHAR },</if>
+            <if test="null != concurrent">concurrent = #{ concurrent, jdbcType=CHAR },</if>
+            <if test="null != status">status = #{ status, jdbcType=CHAR },</if>
+            <if test="null != createBy">create_by = #{ createBy, jdbcType=VARCHAR },</if>
+            <if test="null != createTime">create_time = #{ createTime, jdbcType=TIMESTAMP },</if>
+            <if test="null != updateBy">update_by = #{ updateBy, jdbcType=VARCHAR },</if>
+            <if test="null != updateTime">update_time = #{ updateTime, jdbcType=TIMESTAMP },</if>
+            <if test="null != remark">remark = #{ remark, jdbcType=VARCHAR }</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+  <update id="updateBatch" parameterType="list">
+    <foreach collection="list" index="index" item="item" open="" separator=";" close="">
+	  	<include refid="job_infoUpdateBatch" />
+	</foreach>
+  </update>
+  <delete id="delete">
+    DELETE FROM `job_info` WHERE id = #{id}
+  </delete>
+</mapper>

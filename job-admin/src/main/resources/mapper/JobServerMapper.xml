@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.frontier.job.admin.mapper.JobServerMapper">
+  <resultMap id="BaseResultMap" type="com.frontier.job.admin.model.JobServer">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="app_name" jdbcType="VARCHAR" property="appName" />
+    <result column="app_desc" jdbcType="VARCHAR" property="appDesc" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="address_list" jdbcType="LONGVARCHAR" property="addressList" />
+  </resultMap>
+  <sql id="job_serverColumns">
+        id, <!--  -->
+        app_name, <!-- 服务名称 -->
+        app_desc, <!-- 服务描述 -->
+        update_time, <!--  -->
+        address_list <!-- 服务地址列表，多地址逗号分隔 -->
+  </sql>
+  <sql id="job_serverDynamicWhere">
+    <where>
+      <if test="null != id and '' !=  id">AND id = #{ id}</if>
+      <if test="null != appName and '' !=  appName">AND app_name = #{ appName}</if>
+      <if test="null != addressList and '' !=  addressList">AND address_list = #{ addressList}</if>
+	</where>
+  </sql>
+  <sql id="job_serverDynamicLikeWhere">
+    <where>
+      <if test="null != id and '' !=  id">AND id LIKE #{ id}</if>
+      <if test="null != appName and '' !=  appName">AND app_name LIKE #{ appName}</if>
+      <if test="null != appDesc and '' !=  appDesc">AND app_desc LIKE #{ appDesc}</if>
+      <if test="null != updateTime and '' !=  updateTime">AND update_time LIKE #{ updateTime}</if>
+      <if test="null != addressList and '' !=  addressList">AND address_list LIKE #{ addressList}</if>
+	</where>
+  </sql>
+  <select id="listPage" parameterType="com.frontier.job.admin.model.JobServer" resultMap="BaseResultMap">
+    SELECT <include refid="job_serverColumns" /> FROM  `job_server` <include refid="job_serverDynamicWhere" />
+  </select>
+  <select id="listLikePage" parameterType="com.frontier.job.admin.model.JobServer" resultMap="BaseResultMap">
+    SELECT <include refid="job_serverColumns" /> FROM  `job_server` <include refid="job_serverDynamicLikeWhere" />
+  </select>
+  <select id="list" parameterType="com.frontier.job.admin.model.JobServer" resultMap="BaseResultMap">
+    SELECT <include refid="job_serverColumns" /> FROM  `job_server` <include refid="job_serverDynamicWhere" />
+  </select>
+  <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT <include refid="job_serverColumns" /> FROM  `job_server` WHERE id = #{id}
+  </select>
+  <select id="getOne" parameterType="com.frontier.job.admin.model.JobServer" resultMap="BaseResultMap">
+    SELECT <include refid="job_serverColumns" /> FROM  `job_server` <include refid="job_serverDynamicWhere" /> LIMIT 1
+  </select>
+  <select id="count" parameterType="com.frontier.job.admin.model.JobServer" resultType="java.lang.Long">
+    SELECT COUNT(1) FROM `job_server` <include refid="job_serverDynamicWhere" />
+  </select>
+  <select id="countLike" parameterType="com.frontier.job.admin.model.JobServer" resultType="java.lang.Long">
+    SELECT COUNT(1) FROM `job_server` <include refid="job_serverDynamicLikeWhere" />
+  </select>
+  <sql id="save_job_server_columns">
+    INSERT INTO `job_server`(
+		app_name, app_desc, update_time, address_list
+	) VALUES
+  </sql>
+  <sql id="save_job_server_values">
+    (
+	  #{ appName, jdbcType=VARCHAR},
+	  #{ appDesc, jdbcType=VARCHAR},
+	  #{ updateTime, jdbcType=TIMESTAMP},
+	  #{ addressList, jdbcType=LONGVARCHAR}
+	)
+  </sql>
+  <sql id="batch_save_job_server_values">
+    (
+	  #{ item.appName, jdbcType=VARCHAR},
+	  #{ item.appDesc, jdbcType=VARCHAR},
+	  #{ item.updateTime, jdbcType=TIMESTAMP},
+	  #{ item.addressList, jdbcType=LONGVARCHAR}
+	)
+  </sql>
+  <insert id="save" keyProperty="id" parameterType="com.frontier.job.admin.model.JobServer" useGeneratedKeys="true">
+    <include refid="save_job_server_columns" /><include refid="save_job_server_values" />
+  </insert>
+  <insert id="saveBatch" keyProperty="id" parameterType="list" useGeneratedKeys="true">
+    <include refid="save_job_server_columns"/>
+	<foreach collection="list" index="index" item="item" separator=",">
+		<include refid="batch_save_job_server_values"/>
+	</foreach>
+  </insert>
+
+  <sql id="job_serverUpdate">
+    UPDATE `job_server` 
+	<set> 
+      <if test="null != appName">app_name = #{ appName, jdbcType=VARCHAR },</if>
+      <if test="null != appDesc">app_desc = #{ appDesc, jdbcType=VARCHAR },</if>
+      <if test="null != updateTime">update_time = #{ updateTime, jdbcType=TIMESTAMP },</if>
+      <if test="null != addressList">address_list = #{ addressList, jdbcType=LONGVARCHAR }</if>
+	</set>
+	WHERE app_name = #{appName} and address_list = #{addressList}
+  </sql>
+
+  <sql id="job_serverUpdateBatch">
+    UPDATE `job_server` 
+	<set> 
+      <if test="null != item.appName">app_name = #{ item.appName, jdbcType=VARCHAR },</if>
+      <if test="null != item.appDesc">app_desc = #{ item.appDesc, jdbcType=VARCHAR },</if>
+      <if test="null != item.updateTime">update_time = #{ item.updateTime, jdbcType=TIMESTAMP },</if>
+      <if test="null != item.addressList">address_list = #{ item.addressList, jdbcType=LONGVARCHAR }</if>
+	</set>
+	WHERE id = #{ item.id }
+  </sql>
+  <update id="updateStatus" parameterType="com.frontier.job.admin.model.JobServer">
+      UPDATE `job_server`
+      <set>
+          <if test="null != status">status = #{ status, jdbcType=VARCHAR },</if>
+      </set>
+      WHERE id = #{id}
+  </update>
+  <update id="update" parameterType="com.frontier.job.admin.model.JobServer">
+    <include refid="job_serverUpdate" />
+  </update>
+  <update id="updateBatch" parameterType="list">
+    <foreach collection="list" index="index" item="item" open="" separator=";" close="">
+	  	<include refid="job_serverUpdateBatch" />
+	</foreach>
+  </update>
+  <delete id="delete">
+    DELETE FROM `job_server` WHERE id = #{id}
+  </delete>
+</mapper>
